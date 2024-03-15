@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+    <link rel="stylesheet" href="../css/landing.css">
+</head>
+<body>
+    <section id ="home">
+        <h3></h3>
+    <div class="header">
+        <div id="asbed"><a href="#home">AsBed</a></div>
+        <div class="middleheader">
+            <div id="hostels"><a href="student_portal.html">Hostels</a></div>
+            <div id="faqs"><a href="#Frequent">FAQS</a></div>
+            <div id="contact"><a href="#tacts">Contacts</a></div>
+        </div>
+        <div class="logins">
+            <div id="login"><a  class ="first" href="../login/login_view.php">Login</a></div>
+            <div id="register"><a  class ="second"  href="../login/register_view.php">Register</a></div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="text">
+            <h2>AsBed, a home away from home.</h2>
+            <p>Welcome to the AsBed! We are your digital hub for streamlining hostel operations and enhancing the living experience for students. Our user-friendly platform offers comprehensive tools for hostel administrators, from managing room allocations and maintenance requests to tracking student records and facilitating communication. With a focus on efficiency, transparency, and student satisfaction, we empower hostel staff and residents alike to navigate hostel life seamlessly. Join us in revolutionizing hostel management and fostering a conducive environment for student success.</p> 
+        </div>
+        <div class="picture"><img src="../assets/banners.png" alt="hostel1" style ="width: 600px; height: 500px;"></div>
+    </div>
+</section>
+<section id = "host">
+    <h3 id="intro">Our hostels</h3>
+    <div class="hostels">
+        <div class="hallA">
+            <img src="../assets/hall1.jpg" alt="hall1" style = "width: 200px;height: 160px;">
+            HALL A
+        </div>
+        <div class="hallB">
+            <img src="../assets/hall2.jpg" alt="hall1" style = "width: 200px;height: 160px;">
+            HALL B
+        </div>
+        <div class="hallC">
+            <img src="../assets/alt.jpg" alt="hall1" style = "width: 200px;height: 160px;">
+            HALL C
+        </div>
+        <div class="hallD">
+            <img src="../assets/hall4.jpg" alt="hall1" style = "width: 200px;height: 160px;">
+            HALL D
+        </div>
+        <div class="hallE">
+            <img src="../assets/hall5.jpg" alt="hall1" style = "width: 200px;height: 160px;">
+            HALL E
+        </div>
+    </div>
+</section>
+<section id = "Frequent">
+    <h3 id="fac">FAQs</h3>
+    <div class="fqs">
+        <div class="FAQs">
+            <div class="one">
+                <div class="questions">How do I make a reservation at your hostel? <img src="../assets/plus.png" alt="plus" style = "width: 15px; height: 15px;"></div>
+                <div class="answers">To make a reservation, simply visit our website and select your desired dates, room type, and number of guests. Follow the prompts to complete the booking process securely online.</div>
+            </div>
+            <div class="one">
+                <div class="questions">Do you have parking facilities? <img src="../assets/plus.png" alt="plus" style = "width: 15px; height: 15px;"></div>
+                <div class="answers">We may have limited parking available on-site or nearby. Please inquire about parking options when making your reservation.</div>
+            </div>
+            <div class="one">
+                <div class="questions">Are pets allowed at the hostel? <img src="../assets/plus.png" alt="plus" style = "width: 15px; height: 15px;"></div>
+                <div class="answers">Unfortunately, pets are not allowed at our hostel, with the exception of service animals.</div>
+            </div>
+            <div class="one">
+                <div class="questions">Is the hostel accessible for guests with disabilities? <img src="../assets/plus.png" alt="plus" style = "width: 15px; height: 15px;"></div>
+                <div class="answers">We strive to accommodate all guests, including those with disabilities. Please contact us in advance to discuss specific accessibility needs and ensure we can provide suitable accommodations.</div>
+            </div>
+            <div class="one">
+                <div class="questions">What amenities are available in the rooms? <img src="../assets/plus.png" alt="plus" style = "width: 15px; height: 15px;"></div>
+                <div class="answers">Our rooms are equipped with comfortable beds, individual reading lights, power outlets, and secure lockers for each guest. Some rooms may also include en-suite bathrooms or shared facilities, depending on the room type booked..</div>
+            </div>
+        </div>
+        <img src="../assets/decor.png" alt="decor" style="width: 400px; height: 400px;">
+</div>
+</section>
+<section id = "tacts">
+<h3 class="con">Contacts</h3>
+    <div class="contacts">
+        <div class="physicaladdress">
+           <h4>Physical Address</h4> 
+            45 Kakramadu Road,
+            <br>
+            Accra, Greater Accra Region,
+            <br>
+            Ghana</div>
+        <div class="email">
+            <h4>Emails</h4> 
+            info@ghanahostel.com
+            <br>
+            bookings@ghanahostel.com
+            <br>
+            support@ghanahostel.com
+            <br>
+            inquiries@ghanahostel.com
+            <br>
+            reservations@ghanahostel.com
+        </div>
+        <div class="phonenumber">
+            <h4>Phonenumbers</h4> 
+            +233 30 277 6050
+            <br>
+            +233 24 123 4567
+            <br>
+            +233 20 987 6543
+            <br>
+            +233 27 555 4444
+            <br>
+            +233 26 777 8888
+        </div>
+    </div>
+</section>
+    <script>
+        const quest = document.querySelectorAll('.questions');
+        quest.forEach(q => {
+            q.addEventListener('click',()=> {
+                const a = q.nextElementSibling;
+                a.classList.toggle('show');
+
+            });
+        });
+
+    </script>
+</body>
+</html>
