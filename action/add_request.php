@@ -1,20 +1,22 @@
 
 <?php
 
-include "../settings/connection.php ";
+include "../settings/connection.php";
 
 $form_output = $_POST;
 
 if(isset($_POST['Srequest'])){
     $subject = $form_output["Trequest"];
-    $request = $form_output["drequest"];
+    $request = $form_output["Drequest"];
 }
 else{
     echo '<script>alert("Please, try again.");</script>';
     echo '<script>window.location.href="../view/studentPortal.php";</script>';
     exit();
 }
-$query = "INSERT INTO  requests(subject, request_text) VALUES ('$subject,$request')";
+$query = "INSERT INTO  requests(subject, request_text) VALUES ('$subject','$request')";
+
+global $con;
 
 if($con->query($query) ===TRUE){
     echo '<script>alert("Request sent");</script>';}
