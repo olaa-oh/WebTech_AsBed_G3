@@ -2,13 +2,14 @@
 // Include the connection file
 include '../settings/connection.php';
 include '../functions/get_hall_id_fxn.php';
-include 'delete_all_rooms_action.php';
 
 $hall_id=search_hall_id( $_GET['hall_name'],  $_GET['capacity']);
 // Check if hall_id is provided in the request
 if(isset($hall_id)) {
     // Sanitize and store the hall_id
+
     $hall_id = mysqli_real_escape_string($con, $hall_id);
+    include './delete_all_rooms_actions2.php';
 
     // Delete all rooms associated with the hall_id
     $deleteRoomsQuery = "DELETE FROM Rooms WHERE hall_id = '$hall_id'";

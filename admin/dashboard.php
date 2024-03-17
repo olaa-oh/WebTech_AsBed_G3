@@ -161,7 +161,7 @@ else if($_SESSION['role_id'] != 2 && $_SESSION['role_id'] != 1){
         <a href="../admin/halls.php">Halls</a>
         <!-- <a href="../admin/announcement.php">Announcements</a> -->
         <!-- <a href="#">Reports</a> -->
-        <a href="../admin/managers_page.html">Requests</a>
+        <a href="../admin/request.php">Requests</a>
 
     </div>
 

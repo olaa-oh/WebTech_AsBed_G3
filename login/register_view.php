@@ -2,10 +2,10 @@
 session_start();
 include '../functions/select_role_fxn.php';
 
-if (isset($_SESSION['role_id']) && $_SESSION['role_id'] !== 1) {
-  echo '<script type="text/javascript">alert("You have been logged out."); window.location.href = "../login/logout_view.php";</script>';
-  exit();
-}
+// if (isset($_SESSION['role_id']) && $_SESSION['role_id'] !== 1) {
+//   echo '<script type="text/javascript">alert("You have been logged out."); window.location.href = "../login/logout_view.php";</script>';
+//   exit();
+// }
 
 
 
