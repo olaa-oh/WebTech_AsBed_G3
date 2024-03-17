@@ -47,21 +47,12 @@ CREATE TABLE IF NOT EXISTS Users (
 CREATE TABLE IF NOT EXISTS Rooms (
     room_id INT AUTO_INCREMENT PRIMARY KEY,
     hall_id INT,
-    room_name VARCHAR(100) NOT NULL,
+    room_name VARCHAR(100) NOT NULL unique,
     capacity INT NOT NULL,
     is_available BOOLEAN DEFAULT TRUE,
     FOREIGN KEY (hall_id) REFERENCES Halls(hall_id)
 );
 
-
--- StudentRoom
-CREATE TABLE IF NOT EXISTS StudentRoom (
-    student_id INT,
-    room_id INT,
-    PRIMARY KEY (student_id, room_id),
-    FOREIGN KEY (student_id) REFERENCES Users(user_id),
-    FOREIGN KEY (room_id) REFERENCES Rooms(room_id)
-);
 
 -- Create a table for bookings in each room
 CREATE TABLE IF NOT EXISTS RoomBookings (
