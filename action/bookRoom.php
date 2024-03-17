@@ -39,12 +39,20 @@ if (isset($_GET["room_id"])) {
         $num_people = $row['num_people'];
         $capacity = $row['capacity'];
 
-        if ($num_people == $capacity) {
+        if ($num_people >= $capacity) {
             $_SESSION["room_full"] = true;
             header("Location: ../view/studentPortal.php");
             exit();
+        } else {
+            // insert new room into db
+            $book_room = $con->prepare("INSERT INTO RoomBookings (room_id, user_id) VALUES (?, ?)");
+            $book_room->bind_param("ii", $room_id, $_SESSION["user_id"]);
+            $book_room->execute();
+            
+            // redirect to Student Portal Page
+            header("Location: ../view/studentPortal.php");
         }
-
+    } else {
         // insert new room into db
         $book_room = $con->prepare("INSERT INTO RoomBookings (room_id, user_id) VALUES (?, ?)");
         $book_room->bind_param("ii", $room_id, $_SESSION["user_id"]);
@@ -52,10 +60,6 @@ if (isset($_GET["room_id"])) {
         
         // redirect to Student Portal Page
         header("Location: ../view/studentPortal.php");
-    } else {
-        // redirect to student portal page
-        header("Location: ../view/studentPortal.php");
-        exit();
     }
 
 } else {
