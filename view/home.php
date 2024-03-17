@@ -15,7 +15,7 @@ session_start()
         <h3 id = "brand"><a href="view\landing.html">
             AsBed</a></h3>
         <img src="../assets/home.png" alt="hostel icon" title=" asbed" style = "width: 5%;">
-        <?php if (strtolower($_SESSION['role_id']) == 1): ?>
+        <?php if (strtolower($_SESSION['role_id']) !== 1): ?>
             <a href="../admin/dashboard.php" class="btn btn-secondary" >DashBoard</a>
 
         <?php endif; ?>
