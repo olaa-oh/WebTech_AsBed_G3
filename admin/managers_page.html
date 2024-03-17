@@ -11,7 +11,9 @@
 
 
     <header>
-        <h1>AsBeD Hostel Booking - Managers Page</h1>
+      <a href="../admin/dashboard.php" class="back-button" >&lt; Back</a>
+
+        <h1>Requests</h1>
         <nav class="navbar">
           <div class="menu-toggle" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -19,18 +21,18 @@
             <div class="bar"></div>
           </div>
           <ul class="menu" id="menu">
-            <li><a href="#room-management">Room Management</a></li>
-            <li><a href="#student-assignment">Student Assignment</a></li>
-            <li><a href="#announcements">Announcements</a></li>
+            <!-- <li><a href="#room-management">Room Management</a></li> -->
+            <!-- <li><a href="#student-assignment">Student Assignment</a></li> -->
+            <!-- <li><a href="#announcements">Announcements</a></li> -->
             <li><a href="#requests">Student Requests</a></li>
-            <li><a href="#room-schedule">Room Schedule</a></li>
-            <li><a href="#reports">Reports</a></li>
-            <li><a href="#settings">Settings</a></li>
+            <!-- <li><a href="#room-schedule">Room Schedule</a></li> -->
+            <!-- <li><a href="#reports">Reports</a></li> -->
+            <!-- <li><a href="#settings">Settings</a></li> -->
           </ul>
         </nav>
       </header>
       
-
+<!-- 
       
   
 
@@ -78,23 +80,20 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Room list will be dynamically generated here -->
         </tbody>
       </table>
-    </section>
+    </section> -->
 
-
+<!-- 
     <section id="student-assignment">
         <h2>Student Assignment</h2>
       
-        <!-- Student search form -->
         <form id="student-search-form">
           <label for="student-search">Search Student:</label>
           <input type="text" id="student-search" placeholder="Enter student name or ID">
           <button type="submit">Search</button>
         </form>
       
-        <!-- Display student details -->
         <div class="student-details">
             <h3>Student Details</h3>
             <p><strong>Name:</strong> <span id="student-name">Dave Sampah</span></p>
@@ -102,7 +101,6 @@
             <p><strong>Program:</strong> <span id="student-program">Computer Science</span></p>
         </div>
 
-        <!-- Room assignment form -->
         <form id="room-assignment-form">
             <div class="hostel-selection">
                 <label for="hostel-select">Select Hostel:</label>
@@ -117,7 +115,6 @@
                   <option value="hostel7">Ephraim Amu</option>
                   <option value="hostel8">Walter Sisulu</option>
                   </select>
-            <!-- Hostel options will be dynamically populated here -->
           </select>
       
         <div class="available-rooms">
@@ -129,42 +126,35 @@
                 <option value="room2">Room 3</option>
                 <option value="room2">Room 4</option>
                 <option value="room2">Room 5</option>
-            <!-- Room options will be dynamically populated here -->
             </select>
         </div>
 
           <button type="submit">Assign Room</button>
         </form>
       
-        <!-- Confirmation message -->
         <div id="assignment-confirmation">
-          <!-- Confirmation message will be displayed here -->
         </div>
       </section>
-      
+       -->
 
 
 
-    <section id="announcements">
+    <!-- <section id="announcements">
         <h2>Announcements</h2>
       
-        <!-- Display announcements here -->
         <div id="announcement-list">
-          <!-- Announcements will be dynamically generated here -->
           <div class="announcement">
             <p class="announcement-text">Welcome to the hostel booking system!</p>
             <p class="announcement-date">Posted on: January 25, 2024</p>
           </div>
-          <!-- Sample announcement -->
         </div>
       
-        <!-- Form to create new announcements -->
         <form id="announcement-form">
           <label for="announcement-text">New Announcement:</label>
           <textarea id="announcement-text" rows="4" cols="50" placeholder="Enter your announcement here"></textarea>
           <button type="submit">Post Announcement</button>
         </form>
-      </section>
+      </section> -->
       
       <!-- <section id="requests">
         <h2>Student Requests</h2>
@@ -195,25 +185,23 @@
 <section id="requests">
   <h2>Student Requests</h2>
 
-  <!-- Display student requests titles as a list -->
   <div id="request-list">
     <ul>
       <li><a href="#" onclick="showRequest('Request 1')">Emergency Maintenance Needed in Hostel 2C</a></li>
       <li><a href="#" onclick="showRequest('Request 2')">Complaint Regarding Noisy Neighbors in Room 304</a></li>
       <li><a href="#" onclick="showRequest('Request 3')">Notification of Plumbing Issue in Bathroom Stall 2</a></li>
-      <!-- Add more list items with request titles -->
     </ul>
   </div>
 </section>
 
 <!-- Pop-up form to display the entire request message -->
-<div class="modal-overlay" id="modalOverlay">
+<!-- <div class="modal-overlay" id="modalOverlay">
   <div class="modal-content">
     <span class="modal-close" onclick="closeRequestPopup()">&times;</span>
     <h3 id="request-title"></h3>
     <p id="request-message"></p>
   </div>
-</div>
+</div> -->
 
 <script>
   // Function to show request details in a pop-up
@@ -260,15 +248,15 @@
 
 
 
-      <section id="room-schedule">
-        <h2>Room Schedule</h2>
+      <!-- <section id="room-schedule">
+        <h2>Room Schedule</h2> -->
         <!-- Display room schedule here -->
-        <div id="schedule-list">
+        <!-- <div id="schedule-list"> -->
           <!-- Room schedule will be dynamically generated here -->
-        </div>
+        <!-- </div> -->
       
         <!-- Form to manage room schedule -->
-        <form id="manage-schedule-form">
+        <!-- <form id="manage-schedule-form">
           <label for="room-id">Room No.:</label>
           <input type="text" id="room-id" placeholder="Enter room number">
           <label for="start-time">Start Time:</label>
@@ -277,36 +265,36 @@
           <input type="datetime-local" id="end-time">
           <button type="submit">Update Schedule</button>
         </form>
-      </section>
+      </section> -->
       
 
-
+<!-- 
       <section id="reports">
-        <h2>Reports</h2>
+        <h2>Reports</h2> -->
         
         <!-- Report options and date range picker here -->
-        <div class="report-options">
+        <!-- <div class="report-options">
           <label for="date-range">Select Date Range:</label>
           <input type="date" id="start-date">
           <label for="end-date">to</label>
           <input type="date" id="end-date">
-        </div>
+        </div> -->
         
         <!-- Occupancy report chart/table will be displayed here -->
-        <div class="occupancy-report">
+        <!-- <div class="occupancy-report">
           <h3>Occupancy Report</h3>
-          <canvas id="occupancy-chart" width="400" height="200"></canvas>
+          <canvas id="occupancy-chart" width="400" height="200"></canvas> -->
           <!-- Include JavaScript to generate occupancy chart -->
-        </div>
+        <!-- </div> -->
         
         <!-- Maintenance report list will be displayed here -->
-        <div class="maintenance-report">
+        <!-- <div class="maintenance-report">
           <h3>Maintenance Report</h3>
           <ul>
             <li>Room 101: Leak fixed</li>
-            <li>Room 102: Light bulb replaced</li>
+            <li>Room 102: Light bulb replaced</li> -->
             <!-- Additional maintenance items can be listed here -->
-          </ul>
+          <!-- </ul>
         </div>
         
         <button id="download-reports-btn">Download Reports</button>
@@ -314,7 +302,7 @@
       
     
     </section>
-  </div>
+  </div> -->
 
   <footer>
     <p>&copy; 2024 AsBeD Hostel Booking System</p>

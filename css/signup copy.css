@@ -1,0 +1,129 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    color: #853E3E;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .signup-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    margin: 50px auto 20px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #853E3E;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #853E3E;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #853E3E;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #6d2c2c;
+  }
+  
+  .divider {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+  }
+  
+  .login-btn:hover {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+
+  .login-btn > a {
+    text-decoration: none;
+    color: #666;
+  }
+
+  .input-group {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust as needed */
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .password-toggle i {
+    color: #999;
+  }
+  
+  .password-toggle i:hover {
+    color: #333;
+  }
+
+  .fas{
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+  }

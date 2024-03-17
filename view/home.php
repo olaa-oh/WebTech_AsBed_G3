@@ -1,16 +1,25 @@
+<?php
+session_start()
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>student_portal</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <div class="header">
         <h3 id = "brand"><a href="view\landing.html">
             AsBed</a></h3>
-        <img src="assets/home.png" alt="hostel icon" title=" asbed" style = "width: 5%;">
+        <img src="../assets/home.png" alt="hostel icon" title=" asbed" style = "width: 5%;">
+        <?php if (strtolower($_SESSION['role_id']) == 1): ?>
+            <a href="../admin/dashboard.php" class="btn btn-secondary" >DashBoard</a>
+
+        <?php endif; ?>
+
         <div class="dropdown">
             <div class="welcome-user">user name</div>
             <div class="dropdown-content">
@@ -45,7 +54,7 @@
             </div>
             
         </dialog>
-        <img class="description-icon" src="assets/search.png" alt="Description Icon" title="Search" style="width: 4.5%;" id =plus>
+        <img class="description-icon" src="../assets/search.png" alt="Description Icon" title="Search" style="width: 4.5%;" id =plus>
         </div>
     </div>
     <div class="hallsRequest">
@@ -53,7 +62,7 @@
         <div class="halls">
         
             <div id = hall>
-                <img class="description-icon" src="assets/hall1.jpg" alt="Description Icon">
+                <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
                 <button id="hallBtn" class="hall-box" onclick="hallBio()">
                     <div class="hall-name">Hall A</div>
                     <div class="room-count">0/10 rooms</div> 
@@ -73,7 +82,7 @@
                 </dialog> 
             </div>
             <div id = hall>
-                <img class="description-icon" src="assets/hall1.jpg" alt="Description Icon">
+                <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
                 <button id="hallBtnB" class="hall-box" onclick="hallBio()">
                     <div class="hall-name">Hall B</div>
                     <div class="room-count">0/40 rooms</div> 
@@ -92,7 +101,7 @@
             </div>
 
             <div id = hall>
-                <img class="description-icon" src="assets/hall1.jpg" alt="Description Icon">
+                <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
                 <button id="hallBtnC" class="hall-box" onclick="hallBio()">
                     <div class="hall-name">Hall C</div>
                     <div class="room-count">0/30 rooms</div> 
@@ -111,7 +120,7 @@
             </div>
 
             <div id = hall>
-                <img class="description-icon" src="assets/hall1.jpg" alt="Description Icon">
+                <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
                 <button id="hallBtnD" class="hall-box" onclick="hallBio()">
                     <div class="hall-name">Hall D</div>
                     <div class="room-count">0/15 rooms</div> 
@@ -130,7 +139,7 @@
             </div>
 
             <div id = hall>
-                <img class="description-icon" src="assets/hall1.jpg" alt="Description Icon">
+                <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
                 <button id="hallBtnE" class="hall-box" onclick="hallBio()">
                     <div class="hall-name">Hall E</div>
                     <div class="room-count">0/20 rooms</div> 

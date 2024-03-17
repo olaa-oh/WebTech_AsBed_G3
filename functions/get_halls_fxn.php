@@ -4,12 +4,14 @@
 include '../settings/connection.php';
 
 // Fetch all users from the database
-$selectQuery = "SELECT * FROM Roles";
+$selectQuery = "SELECT * FROM Halls ORDER BY hall_id DESC" ;
 $result = $con->query($selectQuery);
 
 // Display chore data in a tabular form
 if ($result->num_rows > 0) {
-   return $roles = mysqli_fetch_all($result, MYSQLI_ASSOC);
+   return $hallData = mysqli_fetch_all($result, MYSQLI_ASSOC);
 } else {
-    return $roles = [];
+    return $hallData = [];
 }
+
+

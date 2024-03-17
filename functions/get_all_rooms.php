@@ -1,15 +1,15 @@
-
 <?php
 // Include the connection file
 include '../settings/connection.php';
 
 // Fetch all users from the database
-$selectQuery = "SELECT * FROM Roles";
+$selectQuery = "SELECT * FROM Rooms WHERE hall_id = $hall_id ORDER BY room_id DESC";
 $result = $con->query($selectQuery);
 
 // Display chore data in a tabular form
 if ($result->num_rows > 0) {
-   return $roles = mysqli_fetch_all($result, MYSQLI_ASSOC);
+   return $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
 } else {
-    return $roles = [];
+    return $rooms = [];
 }
+
