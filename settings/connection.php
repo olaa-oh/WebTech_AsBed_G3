@@ -3,7 +3,7 @@
 $SERVER= 'localhost';
 $USERNAME= 'root';
 $PASSWORD= "";
-$DATABASE='ashome';
+$DATABASE='ALEA2025';
 
 $con =new mysqli($SERVER,$USERNAME,$PASSWORD,$DATABASE) or die("The database was not created");
 
