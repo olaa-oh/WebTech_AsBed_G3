@@ -8,7 +8,7 @@ function getRoomNumber($user_id) {
     // retrieve room number and hall name for the user if exists
     $query = "SELECT Rooms.room_name, Halls.hall_name
           FROM Rooms
-          JOIN Halls ON Rooms.hall_id = halls.hall_id
+          JOIN Halls ON Rooms.hall_id = Halls.hall_id
           WHERE Rooms.room_id IN (SELECT room_id FROM RoomBookings WHERE user_id = ?)";
 
     $stmt = $con->prepare($query);
