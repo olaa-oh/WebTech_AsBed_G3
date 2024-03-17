@@ -30,16 +30,17 @@ rgba(0, 0, 0, 0.1)
 .bio{
     border: 1px solid #853E3E;
     width: 100%;
-    height: 120px;
+    height: 75px;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    background-color:#853E3E ;
-    color: white;
-    font-weight: bold;
+    line-height: 2;
+    /* background-color:#853E3E ; */
+    /* color: white; */
+    /* font-weight: bold; */
 }
 
 .title {
@@ -60,13 +61,10 @@ rgba(0, 0, 0, 0.1)
     border-radius: 5px;
     font-weight: bold;
     color: #853E3E;
-
-
 }
 
 #plus {
     padding-left: 10%;
-
 }
 
 .hallsRequest {
@@ -76,11 +74,9 @@ rgba(0, 0, 0, 0.1)
     height: 27em;
     border-radius: 7px;
     display: flex;
-
 }
 
 .halls {
-    border: 3px solid #853E3E;
     height: fit-content;
     height: 27em;
     display: flex;
@@ -89,11 +85,10 @@ rgba(0, 0, 0, 0.1)
     justify-content: center;
     width: 50%;
     background-color: white ;
-    
-   }
+    padding-bottom: 2em;
+}
 
-
-#hall {
+.hall_s {
     border: 1px solid black;
     width: 25%;
     height: fit-content;
@@ -104,7 +99,6 @@ rgba(0, 0, 0, 0.1)
     padding: 5px;
     border-radius: 5px;
     gap: 5px;
-    background-color: #853E3E;
 } 
 
 .hallA,.hallB,.hallC,.hallD,.hallE{
@@ -142,9 +136,6 @@ rgba(0, 0, 0, 0.1)
     /* align-items: center; */
     /* justify-content: center; */
     padding: 20px;
-    background-color: #853E3E;
-
-
 }
 
 table {
@@ -154,11 +145,11 @@ table {
 }
 
 td {
-    border: 2px solid #dddddd;
+    border: 2px solid gray;
     text-align: left;
     padding: 8px;
     width: 70em;
-    color: #dddddd;
+    color: #03385a;
 }
 
 .actions {
@@ -184,10 +175,7 @@ td {
     border-radius: 5px;
     font-weight: bold;
     color: #853E3E;
-
 }
-
-
 
 #form1,#close {
     display: flex;
@@ -195,25 +183,21 @@ td {
     justify-content: center;
     gap: 10px;
     align-items: center;
-
-
 }
 
 #Drequest {
     height: fit-content;
-
 }
 
 #close{
     margin-top: 10px;
-
 }
 
 #requestPo {
     background-color: #a89595;
 }
 
-.room {
+/* .room {
     border: 1px solid;
     width: 30%;
     background-color: #853E3E;
@@ -223,7 +207,7 @@ td {
     height: 50%;
     padding: 5px;
     border-radius: 3px;
-}
+} */
 
 .cse {
     display: flex;
@@ -254,7 +238,108 @@ a {
     justify-content: space-between;
     padding: 10px;
     font-size: 1.5vw;
+}
 
+/* MODAL CONTAINER */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    width: 40%;
+    padding: 1em;
+}
+
+.block_item {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em 1em;
+}
+
+.block_title {
+    display: flex;
+    justify-content: flex-start;
+    flex: 4;
+    color: gray;
+}
+
+.block_value {
+    flex: 8;
+    color: black;
+}
+
+.rooms {
+    padding: 0.5em;
+}
+
+.room {
+    display: flex;
+    padding-left: 1em;
+}
+
+.room_name {
+    color: #853E3E;
+    flex: 3;
+}
+
+.members_title {
+    font-weight: bold;
+}
+
+.members {
+    flex: 5;
+}
+
+.room_name,
+.joined_status {
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
+
+.join-button:hover {
+    cursor: pointer;
+}
+
+.close-button {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+.close-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+}
+
+.welcome-user {
+    font-weight: bold;
+    color: #03385a;
+}
+
+.name-type {
+    color: #03385a; 
+    font-weight: bold;
 }

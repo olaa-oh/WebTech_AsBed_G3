@@ -32,7 +32,7 @@ if (!isset($_POST['signinBtn'])) {
         $row = $result->fetch_assoc();
 
         // Verify password
-        if (!password_verify($password, $row['passwd'])) {
+        if (!password_verify($password, $row['password'])) {
             // Redirect to login page with appropriate message
             header("Location: ../login/login_view.php?error=incorrect_password");
             exit();
@@ -42,8 +42,8 @@ if (!isset($_POST['signinBtn'])) {
             $_SESSION['role_id'] = $row['role_id'];
             $_SESSION['username'] = $row['username'];
 
-            // Redirect to homepage
-            header("Location: ../view/homepage.php");
+            // Redirect to Student Portal page
+            header("Location: ../view/studentPortal.php");
             exit();
         }
     }

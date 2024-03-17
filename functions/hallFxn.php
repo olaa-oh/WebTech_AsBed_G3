@@ -1,5 +1,5 @@
 <?php
-include '../action/getAllHalls.php';
+include_once('../action/getAllHalls.php');
 
 $h_data = all_halls();
 

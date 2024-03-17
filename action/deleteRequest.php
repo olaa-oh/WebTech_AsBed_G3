@@ -7,8 +7,8 @@ global $con;
 
 if(isset($_GET['id'])){
     $r_id = $_GET['id'];
-    $query = "DELETE FROM requests WHERE request_id = $r_id ";
-    $choreSubject = "SELECT title FROM requests WHERE request_id = $r_id ";
+    $query = "DELETE FROM Requests WHERE request_id = $r_id ";
+    $choreSubject = "SELECT title FROM Requests WHERE request_id = $r_id ";
 
 
     //

@@ -1,6 +1,6 @@
 <?php
 // Include the connection file
-include '../settings/connection.php';
+include_once('../settings/connection.php');
 
 // SELECT query on the “family_name” table
 $query = "SELECT * FROM Roles";

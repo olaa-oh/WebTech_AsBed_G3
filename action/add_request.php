@@ -1,31 +1,31 @@
 
 <?php
+session_start();
 
-include "../settings/connection.php";
+include_once("../settings/connection.php");
 
 $form_output = $_POST;
 
-if(isset($_POST['Srequest'])){
+if (isset($_POST['Srequest'])) {
     $subject = $form_output["Trequest"];
     $request = $form_output["Drequest"];
-}
-else{
+} else {
     echo '<script>alert("Please, try again.");</script>';
     echo '<script>window.location.href="../view/studentPortal.php";</script>';
     exit();
 }
-$query = "INSERT INTO  requests(subject, request_text) VALUES ('$subject','$request')";
+
+$user_id = $_SESSION['user_id'];
+$query = "INSERT INTO  Requests(title, request_text, student_id) VALUES ('$subject','$request', '$user_id')";
 
 global $con;
 
-if($con->query($query) ===TRUE){
-    echo '<script>alert("Request sent");</script>';}
-    else{
-        '<script>alert("Error, try again.");</script>';
-    }
+if($con->query($query) ===TRUE) {
+    echo '<script>alert("Request sent");</script>';
+} else {
+    '<script>alert("Error, try again.");</script>';
+}
 
 echo '<script>window.location.href="../view/studentPortal.php";</script>';
 exit();
-
-
 ?>

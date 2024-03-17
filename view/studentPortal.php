@@ -1,8 +1,16 @@
 <?php
+session_start();
+
+// ensure user is logged in
+if (!(isset($_SESSION["user_id"]))) {
+    // redirect to login
+    header("Location: ../login/login_view.php");
+    exit();
+}
 
 // include '../settings/core.php';
-include '../action/requestFxn.php';
-
+include_once('../functions/requestFxn.php');
+include_once('../functions/hallFxn.php');
 ?>
 
 <!DOCTYPE html>
@@ -19,18 +27,28 @@ include '../action/requestFxn.php';
             AsBed</a></h3>
         <img src="../assets/home.png" alt="hostel icon" title=" asbed" style = "width: 5%;">
         <div class="dropdown">
-            <div class="welcome-user">user name</div>
             <div class="dropdown-content">
-              <a href="#">Settings</a>
-              <a href="#">Logout</a>
+              <!-- <a href="#">Settings</a> -->
+              <a href="../login/logout_view.php">Logout</a>
             </div>
           </div>
     </div>
     <div class="bio">
-        <p>Welcome, to the student portal.</p>
-        <br>
-        <p>[You are in [Hall][room]</p>
-        <!-- <p>You have not booked</p> -->
+        <div>
+            Welcome, <span class="welcome-user"><?php echo $_SESSION["username"] ?></span> to the student portal.
+        </div>
+        <?php  
+            include_once("../action/getRoomNumber.php");
+            $room_data = getRoomNumber($_SESSION["user_id"]);
+
+            if ($room_data == -1) {
+                echo '<div>You have not booked a room.</div>';
+            } else {
+                echo '<div>
+                    You are in Hall: <span class="name-type">' . $room_data[1] . '</span> Room: <span class="name-type">' . $room_data[0] . '</span>
+                </div>';
+            }
+        ?>
     </div>
     <div class="title">
         <div id="hallname">HALLS</div>
@@ -52,36 +70,93 @@ include '../action/requestFxn.php';
             </div>
             
         </dialog>
-        <img class="description-icon" src="../assets/search.png" alt="Description Icon" title="Search" style="width: 4.5%;" id =plus>
         </div>
     </div>
     <div class="hallsRequest">
-
         <div class="halls">
-        
-            <div id = hall>
-                <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
-                <button id="hallBtn" class="hall-box" onclick="hallBio()">
-                    <div class="hall-name">Hall A</div>
-                    <div class="room-count">0/10 rooms</div> 
-                </button>
-                <dialog id = "rooms">
-                    <div class="mainRooms">
-                        <div class="room" id ="rA">
-                            R1
-                            <input type="image" class="description-icon" src="../assets/plus.png" alt="Description Icon" style="width:15%;" >
-                            <input type="image" class="description-icon" src="../assets/minus-sign.png" alt="Description Icon" style="width: 15%;" >
-                        </div>                 
+        <?php
+        echo  $hall_data;
+        ?>
+
+        <!-- HALL MODAL -->
+        <div id="hall-modal" class="modal-container">
+            <div class="modal-content" id="hall-modal-content">
+                <!-- <div class="block_item">
+                    <a class="block_title">Hall Name:</a>
+                    <a class="block_value">Water Sisulu</a>
+                </div>
+                <div class="block_item">
+                    <a class="block_title">Capacity:</a>
+                    <a class="block_value">10</a>
+                </div>
+                <div class="block_item">
+                    <a class="block_title">Location:</a>
+                    <a class="block_value">On Campus</a>
+                </div>
+                <div class="rooms">
+                    <div class="room">
+                        <div class="room_name">R1</div>
+                        <div class="members">
+                            <a class="members_title">Members:</a>
+                            <ol class="member_list">
+                                <li class="memberName">Amma Tired</li>
+                                <li class="memberName">Amma Energetic</li>
+                            </ol>
+                        </div>
+                        <div class="joined_status">
+                            <a class="join-button">
+                                <img class="description-icon" src="../assets/plus1.png" alt="Description Icon" style="width:15%;">
+                            </a>
+                        </div>
                     </div>
-                   <div class="cse">
-                    <button id = "closeRoom">Close</button>
-                   </div>
-                    
-                </dialog> 
+
+                    <div class="room">
+                        <div class="room_name">R2</div>
+                        <div class="members">
+                            <a class="members_title">Members:</a>
+                            <ol class="member_list">
+                                <li class="memberName">Amma Tired</li>
+                                <li class="memberName">Amma Energetic</li>
+                            </ol>
+                        </div>
+                        <div class="joined_status">
+                            <a class="join-button">
+                                <img class="description-icon" src="../assets/plus1.png" alt="Description Icon" style="width:15%;">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="room">
+                        <div class="room_name">R3</div>
+                        <div class="members">
+                            <a class="members_title">Members:</a>
+                            <ol class="member_list">
+                                <li class="memberName">Amma Tired</li>
+                                <li class="memberName">Amma Energetic</li>
+                            </ol>
+                        </div>
+                        <div class="joined_status">
+                            <a class="join-button">
+                                <img class="description-icon" src="../assets/plus1.png" alt="Description Icon" style="width:15%;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: center; padding-top: 1em">
+                    <button type="button" id="close-button" class="close-button" onclick="closeHallInfoModalContainer()">
+                        <span>
+                            Cancel
+                        </span>
+                    </button>
+                </div> -->
             </div>
-            <div id = hall>
+        </div>
+
+
+              <!-- <div class = hall_s>
                 <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
-                <button id="hallBtnB" class="hall-box" onclick="hallBio()">
+                <button id="hallBtnB" class="hall-box" >
                     <div class="hall-name">Hall B</div>
                     <div class="room-count">0/40 rooms</div> 
                 </button>
@@ -95,73 +170,19 @@ include '../action/requestFxn.php';
                 </div>
                     <div class="cse">
                         <button id = "closeRoomB">Close</button>
-                       </div>                </dialog>
-            </div>
-
-            <div id = hall>
-                <img class="description-icon" src="../assets/hall5.jpg" alt="Description Icon">
-                <button id="hallBtnC" class="hall-box" onclick="hallBio()">
-                    <div class="hall-name">Hall C</div>
-                    <div class="room-count">0/30 rooms</div> 
-                </button>
-                <dialog id = "roomsC">
-                    <div class="mainRooms">
-                        <div class="room" id ="rC">
-                            R1
-                            <input type="image" class="description-icon" src="../assets/plus.png" alt="Description Icon" style="width:15%;" >
-                            <input type="image" class="description-icon" src="../assets/minus-sign.png" alt="Description Icon" style="width: 15%;" >
-                    </div>
-                </div>
-                    <div class="cse">
-                        <button id = "closeRoomC">Close</button>
-                       </div>                </dialog>
-            </div>
-
-            <div id = hall>
-                <img class="description-icon" src="../assets/hall1.jpg" alt="Description Icon">
-                <button id="hallBtnD" class="hall-box" onclick="hallBio()">
-                    <div class="hall-name">Hall D</div>
-                    <div class="room-count">0/15 rooms</div> 
-                </button>
-                <dialog id = "roomsD">
-                    <div class="mainRooms">
-                        <div class="room" id ="rD">
-                            R1
-                            <input type="image" class="description-icon" src="../assets/plus.png" alt="Description Icon" style="width:15%;" >
-                            <input type="image" class="description-icon" src="../assets/minus-sign.png" alt="Description Icon" style="width: 15%;" >
-                    </div>
-                </div>
-                    <div class="cse">
-                        <button id = "closeRoomD">Close</button>
-                       </div>                </dialog>
-            </div>
-
-            <div id = hall>
-                <img class="description-icon" src="../assets/hall5.jpg" alt="Description Icon">
-                <button id="hallBtnE" class="hall-box" onclick="hallBio()">
-                    <div class="hall-name">Hall E</div>
-                    <div class="room-count">0/20 rooms</div> 
-                </button>
-                <dialog id = "roomsE">
-                    <div class="mainRooms">
-                        <div class="room" id ="rE">
-                            R1
-                            <input type="image" class="description-icon" src="../assets/plus.png" alt="Description Icon" style="width:15%;" >
-                            <input type="image" class="description-icon" src="../assets/minus-sign.png" alt="Description Icon" style="width: 15%;" >
-                    </div>
-                </div>
-                    <div class="cse">
-                        <button id = "closeRoomE">Close</button>
-                       </div>                </dialog>
-            </div>
+                       </div>                
+                    </dialog>
+            </div> -->
         </div>   
         <div class="requests">
             <table>
+             <tr>
+                <th>Title</th>
+                <th>Concern<th>
+             </tr>
                 <?php
                 echo $data;
                 ?>
-
-
             </table>
             
         </div>
