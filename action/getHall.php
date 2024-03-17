@@ -63,8 +63,9 @@ function getHallRoomsAndMembers($hall_id) {
             $hall_rooms[] = $room;
         }
 
-        return $hall_rooms;
     }
+
+    return $hall_rooms;
 }
 
 // Check if 'id' parameter is provided in the URL
