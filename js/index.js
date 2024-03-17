@@ -107,7 +107,11 @@ function getHallInfo(hall_id) {
                     const roomName = document.createElement("div");
                     roomName.classList.add("room_name");
                     roomName.textContent = "Room " + room.room_name;
+                    const roomCapacity = document.createElement("div");
+                    roomCapacity.classList.add("room_name")
+                    roomCapacity.textContent = "(Cap: " + room.capacity + ")"
                     roomDiv.appendChild(roomName);
+                    roomDiv.appendChild(roomCapacity);
             
                     // Check if there are members for this room
                     if (room.members && room.members.length > 0) {

@@ -72,10 +72,16 @@ include_once('../functions/hallFxn.php');
         </dialog>
         </div>
     </div>
+    <?php
+        if (isset($_SESSION["room_full"])) {
+            echo '<div style="color: red;">The room is full!</div>';
+            unset($_SESSION["room_full"]);
+        }
+    ?>
     <div class="hallsRequest">
         <div class="halls">
         <?php
-        echo  $hall_data;
+            echo  $hall_data;
         ?>
 
         <!-- HALL MODAL -->
