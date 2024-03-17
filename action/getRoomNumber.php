@@ -9,7 +9,7 @@ function getRoomNumber($user_id) {
     $query = "SELECT Rooms.room_name, Halls.hall_name
           FROM Rooms
           JOIN Halls ON Rooms.hall_id = halls.hall_id
-          WHERE Rooms.room_id IN (SELECT room_id FROM roombookings WHERE user_id = ?)";
+          WHERE Rooms.room_id IN (SELECT room_id FROM Roombookings WHERE user_id = ?)";
 
     $stmt = $con->prepare($query);
     $stmt->bind_param("i", $user_id);
