@@ -31,38 +31,40 @@ function getHallRoomsAndMembers($hall_id) {
 
     $hall_rooms = array();
 
-    // Fetch all hall rooms
-    while ($room = $result_rooms->fetch_assoc()) {
-        // Prepare the query to retrieve room members for each hall room
-        $get_room_members = $con->prepare("SELECT * FROM roombookings WHERE room_id = ?");
-        $get_room_members->bind_param("i", $room['room_id']);
-        $get_room_members->execute();
-        $result_members = $get_room_members->get_result();
+    if ($result_rooms->num_rows > 0) {
+        // Fetch all hall rooms
+        while ($room = $result_rooms->fetch_assoc()) {
+            // Prepare the query to retrieve room members for each hall room
+            $get_room_members = $con->prepare("SELECT * FROM roombookings WHERE room_id = ?");
+            $get_room_members->bind_param("i", $room['room_id']);
+            $get_room_members->execute();
+            $result_members = $get_room_members->get_result();
 
-        $room_members = array();
+            $room_members = array();
 
-        // Fetch all room members
-        while ($member = $result_members->fetch_assoc()) {
-            // retrieve member's name
-            $get_user = $con->prepare("SELECT * FROM users WHERE user_id = ?");
-            $get_user->bind_param("i", $member["user_id"]);
-            $get_user->execute();
-            $user_result = $get_user->get_result();
-            $user_details = $user_result->fetch_assoc();
+            // Fetch all room members
+            while ($member = $result_members->fetch_assoc()) {
+                // retrieve member's name
+                $get_user = $con->prepare("SELECT * FROM users WHERE user_id = ?");
+                $get_user->bind_param("i", $member["user_id"]);
+                $get_user->execute();
+                $user_result = $get_user->get_result();
+                $user_details = $user_result->fetch_assoc();
 
-            // Add username to member from user_details
-            $member['username'] = $user_details['username'];
+                // Add username to member from user_details
+                $member['username'] = $user_details['username'];
 
-            // Add username to member from user_details
-            $room_members[] = $member;
+                // Add username to member from user_details
+                $room_members[] = $member;
+            }
+
+            // Add room and its members to the hall rooms array
+            $room['members'] = $room_members;
+            $hall_rooms[] = $room;
         }
 
-        // Add room and its members to the hall rooms array
-        $room['members'] = $room_members;
-        $hall_rooms[] = $room;
+        return $hall_rooms;
     }
-
-    return $hall_rooms;
 }
 
 // Check if 'id' parameter is provided in the URL
