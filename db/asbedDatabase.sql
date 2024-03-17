@@ -7,6 +7,10 @@
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
+DROP DATABASE IF EXISTS asbedDatabase;
+CREATE DATABASE asbedDatabase;
+USE asbedDatabase;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -100,7 +104,7 @@ CREATE TABLE `Manager` (
 CREATE TABLE `Requests` (
   `request_id` int(11) NOT NULL,
   `student_id` int(11) DEFAULT NULL,
-  `subject` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `request_text` text DEFAULT NULL,
   `request_date` datetime DEFAULT current_timestamp(),
   `is_resolved` tinyint(1) DEFAULT 0
