@@ -22,7 +22,7 @@ if (isset($_GET["room_id"])) {
     $delete_booking->execute();
 
     // ensure the room is not full
-    $query = "SELECT COUNT (rb.user_id) AS num_people, r.capacity
+    $query = "SELECT COUNT(rb.user_id) AS num_people, r.capacity
           FROM RoomBookings rb
           JOIN Rooms r ON rb.room_id = r.room_id
           WHERE rb.room_id = ?
@@ -35,7 +35,6 @@ if (isset($_GET["room_id"])) {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-
         $num_people = $row['num_people'];
         $capacity = $row['capacity'];
 
@@ -48,16 +47,17 @@ if (isset($_GET["room_id"])) {
             $book_room = $con->prepare("INSERT INTO RoomBookings (room_id, user_id) VALUES (?, ?)");
             $book_room->bind_param("ii", $room_id, $_SESSION["user_id"]);
             $book_room->execute();
-            
+
             // redirect to Student Portal Page
             header("Location: ../view/studentPortal.php");
         }
+
     } else {
         // insert new room into db
         $book_room = $con->prepare("INSERT INTO RoomBookings (room_id, user_id) VALUES (?, ?)");
         $book_room->bind_param("ii", $room_id, $_SESSION["user_id"]);
         $book_room->execute();
-        
+
         // redirect to Student Portal Page
         header("Location: ../view/studentPortal.php");
     }
