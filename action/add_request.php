@@ -2,7 +2,7 @@
 <?php
 
 include "../settings/connection.php";
-
+session_start();
 $form_output = $_POST;
 
 if(isset($_POST['Srequest'])){
