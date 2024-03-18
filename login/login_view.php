@@ -6,7 +6,7 @@
 <title>Login</title>
 <link rel="stylesheet" href="../css/login.css">
 <script>
-  function validateFor() {
+  function validateForm() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     
