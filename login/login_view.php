@@ -48,7 +48,7 @@
       </div>
     </form> 
     <hr class="divider">
-    <button type="button" class="register-btn"><a href="register_view.php">Register</a></button>
+    <button type="button" class="register-btn"><a href="register_view.php">Don't have an account? Register</a></button>
   </div>
 </body>
 </html>

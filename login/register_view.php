@@ -18,8 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $_SESSION['role_id'] = $role_id;
   $_SESSION['username'] = $username;
 
-  echo "Role ID: " . $role_id;
-
   // Check if the role is admin or manager
   if ($role_id == 1) {
     // Admin
@@ -30,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if($role_id==3){
-    echo 'I am a student';
     // Encrypt password
   $hashed_password = password_hash($passwd, PASSWORD_DEFAULT);
   $_SESSION['hashed_password'] = $hashed_password;
@@ -253,7 +250,7 @@ $con->close();
 
     </form>
     <hr class="divider">
-    <button type="button" class="login-btn"><a href="login_view.php"> I have an account</a></button>
+    <button type="button" class="login-btn"><a href="login_view.php">Already have an account? Login</a></button>
   </div>
 </body>
 </html>
