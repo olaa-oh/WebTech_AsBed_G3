@@ -243,7 +243,7 @@ $con->close();
       </div>
       <div class="input-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number." required>
         <i id="password-toggle-icon" class="fas fa-eye-slash" onclick="togglePassword()"></i>
       </div>
       <button type="submit" name="submit" id="submitBtn">Submit</button>
