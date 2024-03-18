@@ -8,14 +8,14 @@ $form_output = $_POST;
 if(isset($_POST['Srequest'])){
     $subject = $form_output["Trequest"];
     $request = $form_output["Drequest"];
-    $user_id = $form_output["user_id"];
 }
 else{
     echo '<script>alert("Please, try again.");</script>';
     echo '<script>window.location.href="../view/home.php";</script>';
     exit();
 }
-$query = "INSERT INTO  requests(student_id,subject, request_text) VALUES ('$user_id','$subject','$request')";
+$user_id = $_SESSION['user_id'];
+$query = "INSERT INTO  Requests(title, request_text, student_id) VALUES ('$subject','$request', '$user_id')";
 
 global $con;
 
