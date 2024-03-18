@@ -36,11 +36,11 @@
     <form action="../action/login_user_action.php" method="post" onsubmit="return validateForm()">
       <div class="input-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address." required>
       </div>
       <div class="input-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number." required>
       </div>
       <button type="submit" name='signinBtn'>Login</button>
       <div class="bottom-links">
