@@ -33,7 +33,7 @@
   </div>
   <div class="login-container">
     <h2>Login</h2>
-    <form action="../actions/login_user_action.php" method="post" onsubmit="return validateForm()">
+    <form action="../action/login_user_action.php" method="post" onsubmit="return validateForm()">
       <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>

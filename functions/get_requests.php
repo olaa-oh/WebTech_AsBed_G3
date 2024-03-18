@@ -3,7 +3,7 @@
 include '../settings/connection.php';
 
 // Fetch all users from the database
-$selectQuery = "SELECT * FROM Requests ORDER BY subject ASC" ;
+$selectQuery = "SELECT * FROM Requests ORDER BY title ASC" ;
 $result = $con->query($selectQuery);
 
 // Display chore data in a tabular form

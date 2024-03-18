@@ -112,7 +112,7 @@ include '../functions/get_halls_fxn.php';
 
         <div class="card">
             <h4>Add New Hall</h4>
-            <form action="../actions/add_hall_action.php" method="POST">
+            <form action="../action/add_hall_action.php" method="POST">
                 <div class="form-group">
                     <label for="hallName">Hall Name:</label>
                     <input type="text" class="form-control" id="hallName" name='hallName' placeholder="Enter hall name">
@@ -155,7 +155,7 @@ include '../functions/get_halls_fxn.php';
                     echo "<td>";
                     echo "<a class='btn btn-sm btn-primary btn-edit' style='margin-right:20px' href='hall.php?hall_name=" . urlencode($hall['hall_name']) . "&capacity=" . urlencode($hall['capacity']) . "'>Edit</a>";
                     if (strtolower($_SESSION['role_id']) == 1):
-                    echo "<a class='btn btn-sm btn-danger' href='../actions/delete_hall_action.php?hall_name=" . urlencode($hall['hall_name']) . "&capacity=" . urlencode($hall['capacity']) . "'>Delete</a>";
+                    echo "<a class='btn btn-sm btn-danger' href='../action/delete_hall_action.php?hall_name=" . urlencode($hall['hall_name']) . "&capacity=" . urlencode($hall['capacity']) . "'>Delete</a>";
                     endif;
                     echo "</td>";
                     echo "</tr>";

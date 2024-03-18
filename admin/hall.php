@@ -186,14 +186,14 @@ include '../functions/get_rooms_from_halls.php';
             <a href="../admin/halls.php" class="btn btn-secondary">Back</a>
             <?php if (strtolower($_SESSION['role_id']) == 1): ?>
             <button class="btn btn-success btn-add-room" id='btn-add-room'>Add New Room</button>
-            <a href="../actions/delete_all_rooms_actions.php?hall_id=<?php echo urlencode($hall_id); ?>" class="btn btn-success btn-add-room" >Delete All Rooms</a>
-            <a href="../actions/delete_all_students_from_rooms_action.php" class="btn btn-danger btn-rm-students-to-room" id='btn-add-room'>Remove Students</a>
+            <a href="../action/delete_all_rooms_actions.php?hall_id=<?php echo urlencode($hall_id); ?>" class="btn btn-success btn-add-room" >Delete All Rooms</a>
+            <a href="../action/delete_all_students_from_rooms_action.php" class="btn btn-danger btn-rm-students-to-room" id='btn-add-room'>Remove Students</a>
             <?php endif; ?>
             <button class="btn btn-danger btn-rm-student-fm-room" id='btn-rm-student-fm-room'>Remove Student</button>
             <a class="btn btn-success btn-add-student-to-room" id='btn-add-student-to-room'>Give Out Room</a>
         </div>
         <?php if (strtolower($_SESSION['role_id']) == 1): ?>
-        <form action="../actions/update_hall_action.php" method="post">
+        <form action="../action/update_hall_action.php" method="post">
             <div class="form-group">
                 <label for="hallName">Hall Name:</label>
                 <input type="text" class="form-control" id="hallName" name="hallName" placeholder="Enter new hall name">
@@ -235,7 +235,7 @@ include '../functions/get_rooms_from_halls.php';
                         </div>
                         <div class="modal-body">
                             <!-- Form to edit room details -->
-                            <form action="../actions/edit_room_action.php" method="post">
+                            <form action="../action/edit_room_action.php" method="post">
                                 <div class="form-group">
                                     <label for="editRoomName">Room Name:</label>
                                     <input type="text" class="form-control" id="editRoomName" name="editRoomName" value="<?php echo $room['room_name']; ?>" required>
@@ -248,7 +248,7 @@ include '../functions/get_rooms_from_halls.php';
                                 <button type="button" class="btn btn-secondary d-flex justify-content-center view-roommates-btn" onclick="getRoomates(<?php echo $room['room_id']; ?>)" data-roomid="<?php echo $room['room_id']; ?>">View room-mates</button>
                                 <div id='rommmates'></div>
                                 <div class="modal-footer">
-                                <a href="../actions/delete_room_actions.php?room_id=<?php echo urlencode($room['room_id']); ?>" class="btn btn-danger" >Delete Room</a>
+                                <a href="../action/delete_room_actions.php?room_id=<?php echo urlencode($room['room_id']); ?>" class="btn btn-danger" >Delete Room</a>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Save changes</button>
                         </div>
@@ -278,7 +278,7 @@ include '../functions/get_rooms_from_halls.php';
             </div>
             <div class="modal-body">
                 <!-- Add the action attribute to submit the form to add_room__action.php -->
-                <form id="addRoomForm" action="../actions/add_room_action.php?capacity=.$_SESSION['capacity']." method="post">
+                <form id="addRoomForm" action="../action/add_room_action.php?capacity=.$_SESSION['capacity']." method="post">
                     <div class="form-group">
                         <label for="roomName">Room Name:</label>
                         <input type="text" class="form-control" id="roomName" name="roomName" placeholder="Enter room name" required>
@@ -310,7 +310,7 @@ include '../functions/get_rooms_from_halls.php';
                 </button>
             </div>
             <div class="modal-body">
-                <form id="roomForm" method="post" action="../actions/add_student_to_room.php">
+                <form id="roomForm" method="post" action="../action/add_student_to_room.php">
                     <div class="form-group">
                         <label for="roomSelect">Select Room:</label>
                         <select id="roomSelect" class="form-control" name="room_name">
@@ -346,7 +346,7 @@ include '../functions/get_rooms_from_halls.php';
                 </button>
             </div>
             <div class="modal-body">
-                <form id="userInputForm" action="../actions/rm_student_fm_room.php" method="post">
+                <form id="userInputForm" action="../action/rm_student_fm_room.php" method="post">
                     <div class="form-group">
                         <label for="userInput">Search Users:</label>
                         <input type="text" id="userInput2" name="userInput2" class="form-control" oninput="searchUsers2(this.value)" onkeydown="stopSuggestions(event)">

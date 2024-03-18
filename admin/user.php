@@ -116,7 +116,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="../view/student_portal.php">ASBED</a>
+        <a class="navbar-brand" href="../view/home.php">ASBED</a>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -141,6 +141,8 @@
     <div class="container">
         <div class="mt-3 mb-3">
                 <a href="../admin/dashboard.php" class="btn btn-secondary">< Back</a>
+                <a href="../login/register_view.php" class="btn btn-secondary"> Create Admin Account</a>
+
         </div>
         <div class="row mb-3">
             <div class="col-md-6 offset-md-3">
@@ -187,7 +189,7 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Edit UserName</h2>
-    <form id="editChoreForm" method="POST" action="../actions/edit_Username_actions.php">
+    <form id="editChoreForm" method="POST" action="../action/edit_Username_actions.php">
       <label for="editNameLabel">Name:</label>
       <input type="text" id="editName" name="userName" placeholder="Enter users' name" required pattern="[a-zA-Z\s]+">
       <input type="hidden" id="editUserId" name="userId">
@@ -313,7 +315,7 @@
             // Send an AJAX request
             $.ajax({
                 type: 'POST',
-                url: '../actions/add_user_action.php',
+                url: '../action/add_user_action.php',
                 data: formData,
                 success: function(response) {
                     // Check if the response contains 'successfully added'
@@ -360,7 +362,7 @@ function deleteUser(userId, roleId, email,c) {
     // AJAX request to delete_user_actions.php or appropriate backend endpoint
     $.ajax({
         type: "POST",
-        url: "../actions/delete_user_actions.php",
+        url: "../action/delete_user_actions.php",
         data: { userId: userId, role_id: roleId, email: email },
         success: function(response) {
             // Check if the response is 'success'

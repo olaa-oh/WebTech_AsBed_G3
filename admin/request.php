@@ -128,7 +128,7 @@ h6 {
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="../view/homepage.php">ASBED</a>
+        <a class="navbar-brand" href="../view/home.php">ASBED</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
@@ -156,7 +156,7 @@ h6 {
         // Assuming $requests is an array of requests fetched from the database
         foreach ($requests as $request) {
             // Display each request as a clickable link with subject as title
-            echo "<a href='#' onclick='showRequest(" . $request['request_id'] . ")'>" . $request['subject'] . "</a>";
+            echo "<a href='#' onclick='showRequest(" . $request['request_id'] . ")'>" . $request['title'] . "</a>";
         }
         ?>
     </div>
