@@ -63,7 +63,7 @@ include_once('../functions/hallFxn.php');
             <form action="../action/add_request.php" id ="form1" method="post">
                 <label for="requestTitle">Title</label>
                 <input type="text" id = "Trequest" name ="Trequest">
-
+                <input type="hidden" value="<?php echo $_SESSION["user_id"]; ?>" name="user_id">
                 <label for="requestTitle"> Request Details</label>
                 <textarea name="Drequest" id="Drequest" cols="30" rows="10"></textarea>
 
