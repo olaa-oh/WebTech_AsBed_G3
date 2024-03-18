@@ -3,7 +3,7 @@
 include '../settings/connection.php';
 
 function all_halls(){
-    $query = "SELECT *FROM Halls";
+    $query = "SELECT * FROM Halls";
 
     global $con;
 

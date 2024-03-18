@@ -3,7 +3,7 @@
 include '../settings/connection.php';
 
 function all_requests(){
-    $query = "SELECT *FROM  Requests";
+    $query = "SELECT * FROM Requests";
 
     global $con;
 

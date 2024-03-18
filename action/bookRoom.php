@@ -22,7 +22,7 @@ if (isset($_GET["room_id"])) {
     $delete_booking->execute();
 
     // ensure the room is not full
-    $query = "SELECT COUNT(rb.user_id) AS num_people, r.capacity
+    $query = "SELECT COUNT (rb.user_id) AS num_people, r.capacity
           FROM RoomBookings rb
           JOIN Rooms r ON rb.room_id = r.room_id
           WHERE rb.room_id = ?

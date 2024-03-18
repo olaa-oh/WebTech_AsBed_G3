@@ -16,7 +16,7 @@ if (isset($_POST['Srequest'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$query = "INSERT INTO  Requests(title, request_text, student_id) VALUES ('$subject','$request', '$user_id')";
+$query = "INSERT INTO Requests (title, request_text, student_id) VALUES ('$subject','$request', '$user_id')";
 
 global $con;
 

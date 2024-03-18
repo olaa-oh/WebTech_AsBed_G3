@@ -24,7 +24,7 @@ function getHallRoomsAndMembers($hall_id) {
     global $con;
 
     // Prepare the query to retrieve hall rooms
-    $get_rooms = $con->prepare("SELECT * FROM rooms WHERE hall_id = ?");
+    $get_rooms = $con->prepare("SELECT * FROM Rooms WHERE hall_id = ?");
     $get_rooms->bind_param("i", $hall_id);
     $get_rooms->execute();
     $result_rooms = $get_rooms->get_result();
@@ -35,7 +35,7 @@ function getHallRoomsAndMembers($hall_id) {
         // Fetch all hall rooms
         while ($room = $result_rooms->fetch_assoc()) {
             // Prepare the query to retrieve room members for each hall room
-            $get_room_members = $con->prepare("SELECT * FROM roombookings WHERE room_id = ?");
+            $get_room_members = $con->prepare("SELECT * FROM RoomBookings WHERE room_id = ?");
             $get_room_members->bind_param("i", $room['room_id']);
             $get_room_members->execute();
             $result_members = $get_room_members->get_result();
@@ -45,7 +45,7 @@ function getHallRoomsAndMembers($hall_id) {
             // Fetch all room members
             while ($member = $result_members->fetch_assoc()) {
                 // retrieve member's name
-                $get_user = $con->prepare("SELECT * FROM users WHERE user_id = ?");
+                $get_user = $con->prepare("SELECT * FROM Users WHERE user_id = ?");
                 $get_user->bind_param("i", $member["user_id"]);
                 $get_user->execute();
                 $user_result = $get_user->get_result();
