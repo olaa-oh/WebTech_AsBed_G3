@@ -21,7 +21,7 @@ function checkLogin() {
         // If the session has been inactive for more than a minute (60 seconds), redirect to welcome page
         if ($elapsedTime >= 60) { // Change 60 to the desired number of seconds
             // Redirect to the login page  
-            header("Location: ../login/logout_view.php");
+            header("Location: ../view/index.html");
             // Terminate script execution after redirection
             die();
         } else {
