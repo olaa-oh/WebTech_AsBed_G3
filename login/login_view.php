@@ -40,7 +40,7 @@
       </div>
       <div class="input-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$" title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number." required>
+        <input type="password" id="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$" title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number." required>
       </div>
       <button type="submit" name='signinBtn'>Login</button>
       <div class="bottom-links">
