@@ -14,7 +14,7 @@ else{
     echo '<script>window.location.href="../view/studentPortal.php";</script>';
     exit();
 }
-$query = "INSERT INTO  requests(subject, request_text) VALUES ('$subject','$request')";
+$query = "INSERT INTO   Requests(title, request_text) VALUES ('$subject','$request')";
 
 global $con;
 
