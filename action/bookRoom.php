@@ -27,6 +27,8 @@ if (isset($_GET["room_id"])) {
           JOIN Rooms r ON rb.room_id = r.room_id
           WHERE rb.room_id = ?
           GROUP BY rb.room_id";
+          
+
 
     $stmt = $con->prepare($query);
     $stmt->bind_param("i", $room_id);
