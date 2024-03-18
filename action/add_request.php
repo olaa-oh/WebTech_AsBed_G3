@@ -11,7 +11,7 @@ if(isset($_POST['Srequest'])){
 }
 else{
     echo '<script>alert("Please, try again.");</script>';
-    echo '<script>window.location.href="../view/studentPortal.php";</script>';
+    echo '<script>window.location.href="../view/home.php";</script>';
     exit();
 }
 $query = "INSERT INTO   Requests(title, request_text) VALUES ('$subject','$request')";
@@ -24,7 +24,7 @@ if($con->query($query) ===TRUE){
         '<script>alert("Error, try again.");</script>';
     }
 
-echo '<script>window.location.href="../view/studentPortal.php";</script>';
+echo '<script>window.location.href="../view/home.php";</script>';
 exit();
 
 

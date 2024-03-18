@@ -22,7 +22,7 @@ if(isset($_GET['id'])){
         $con->query($query);
 
         echo '<script>alert("'.$subReq.' Deleted!");</script>';
-        echo '<script>window.location.href="../view/studentPortal.php";</script>';
+        echo '<script>window.location.href="../view/home.php";</script>';
     }
 }
 else {
